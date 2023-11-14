@@ -5,14 +5,21 @@
 #ifndef КУРСОВАЯ_WORKER_H
 #define КУРСОВАЯ_WORKER_H
 #include "../Person.h"
+#include "fstream"
 namespace Workers {
 
-    class Worker : public Persons::Person{
+    class Worker{
     private:
-        int salary;
-        static const char requirmentOfTypeEducation[20];
-        static const int requiremnetOfExpirience;
-        static const int timeWork;
+        std::string fio;
+        std::string date_of_birth;
+        static const std::string requirementOfTypeEducation;
+        static const std::string requirementOfExperience;
+        const int middletimeWork;
+    public:
+       std::string getFio();
+       std::string getDateOfBirth();
+       int getmiddletimeWork();
+       Worker(std::string fio,std::string date_of_birth, int middletimeWork);
     };
 
 } // Workers

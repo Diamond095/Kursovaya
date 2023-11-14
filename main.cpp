@@ -5,13 +5,13 @@ using namespace Transport;
 using namespace std;
 
 void exit(){
-        setlocale(LC_ALL, "rus");
         cout << "Возвращайтесь снова!" << endl;
         system("pause");
         exit(0);
     }
 
 int main() {
+    setlocale(LC_ALL, "russian");
     int choise;
     cout << "******************************************************" << endl;
     cout << "******** Добро пожаловать в ИС транспортной компании! ********" << endl;
@@ -27,14 +27,22 @@ int main() {
             case 1:
                 exit();
             case 2:
-
-
-
+                std::string fio;
+                std::string password;
+                int middlehousrOfWork;
+                cout<<"Введите имя фамилию отвечтво ваше"<< endl;
+                cin>>fio;
+                cout<<"Введите пароль для доступа к вашему аккаунту менеджера"<< endl;
+                cin>> password;
+                if(Workers::Manager::checkPassword(fio, password)){
+                    cout<<"Введите среднее время работы менеджера менеджера"<< endl;
+                    cin >> middlehousrOfWork;
+                    Workers::Manager *manager=new Workers::Manager(Workers::Manager::getFileWorkers(fio), fio, Workers::Manager::getDateOfBirth(fio),Workers::Manager::getMiddleHourWork(fio),password);
+                    int choiseManager;
+                    cin >> choiseManager;
+                    manager->choiseInMenu(choiseManager);
+                }
         }
     }
-    std::string name = "Юки";
-    std::string file="text.txt";
-    Bus *bus=new Bus(file, name, 10);
-    Workers::Manager *manager= new Workers::Manager("employers");
     return 0;
 }

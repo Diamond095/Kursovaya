@@ -14,15 +14,17 @@ namespace Trip {
 
     class Trip {
     private:
-        char departure_point[20];
-        char arrival_point[20];
-        time_t start;
-        time_t finish;
+        char departure_point;
+        char arrival_point;
+        char start;
+        char finish;
         Transport::Bus *bus;
         bool status;
         Workers::Driver* driver=nullptr;
     public:
         void SetDriver(Workers::Driver *driver);
+        void SetBus(Transport::Bus *bus);
+        Trip(char start, char finish, char departure, char arrival);
     };
 
 } // Trip

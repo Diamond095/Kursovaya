@@ -8,4 +8,10 @@ namespace Trip {
     void Trip::SetDriver(Workers::Driver *driver) {
         this->driver=driver;
     }
+    Trip::Trip(char start, char finish, char departure, char arravial) :
+    start(start), finish(finish), departure_point(departure), arrival_point(arravial) {};
+
+    void Trip::SetBus(Transport::Bus *bus) {
+        this->bus=bus;
+    }
 } // Trip

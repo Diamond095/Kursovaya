@@ -13,17 +13,13 @@ namespace Persons {
         std::string fio;
         std::string date_of_birth;
         std::string pol;
-        Person *next;
+        static std::string fileWithAllUsers;
     public:
         void SetPersonInfo(std::string fio,std::string date_of_birth,std::string pol);
 
-        //virtual void PersonInfo();
+        virtual void PersonInfo();
 
-        void setNewPeople(Person *newPeople);
-
-        Person *getPerson();
-
-
+        static std::string setAndGetfileWithUsers();
     };
 }
 // Persons

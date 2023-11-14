@@ -9,12 +9,12 @@
 namespace Transport {
 
     class Bus {
-    protected:
+    private:
        double fueltank;
        std::string model;
-       const int rows=4;
-       const  int columns=9;
-       const int levels=1;
+       int rows;
+       int columns;
+       int levels;
        std::string fileName;
     public:
        Bus(std::string fname, std::string model, double fueltank) ;

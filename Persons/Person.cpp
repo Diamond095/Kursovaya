@@ -6,7 +6,6 @@
 #include "iostream"
 
 namespace Persons {
-    using namespace std;
 
     void Person::SetPersonInfo(std::string fio, std::string date_of_birth,std::string pol) {
         this->fio=fio;
@@ -14,15 +13,14 @@ namespace Persons {
         this->pol=pol;
     }
 
-   // void Person::PersonInfo(){
-       // cout << "ФИО: " << fio << endl;
-        //cout << "Дата рождения: " << date_of_birth << endl;
-       // cout << "Пол: " << pol << endl;
-   // }
-    void Person::setNewPeople(Person *newPeople){
-        next=newPeople;
-    }
-    Person* Person::getPerson(){
-        return this->next;
+    void Person::PersonInfo(){
+        std::cout << "ФИО: " << fio << std::endl;
+        std::cout << "Дата рождения: " << date_of_birth << std::endl;
+        std::cout << "Пол: " << pol << std::endl;
+   }
+
+    std::string Person::setAndGetfileWithUsers() {
+        Person::fileWithAllUsers="/Users/ivanbasov/users.txt";
+        return Person::fileWithAllUsers;
     }
 } // Persons
