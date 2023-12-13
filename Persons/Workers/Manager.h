@@ -6,16 +6,17 @@
 #define КУРСОВАЯ_MANAGER_H
 #include "Worker.h"
 #include "../Person.h"
+#include "../../Transport/Bus.h"
 #include "Driver.h"
 #include"iostream"
 #include "fstream"
+
 namespace Workers {
 
     class Manager : public Worker{
     private:
-       Driver* drivers;
        std::string fname;
-       std::string const fileWithTrip="/Users/ivanbsov/fileWithTrips.txt";
+       std::string const fileWithTrip="/Users/ivanbasov/fileWithTrips.txt";
        static std::string  fileWithManagers;
     public:
          void addDriver();
@@ -34,6 +35,9 @@ namespace Workers {
         static std::string getDateOfBirth(std::string fio);
         static int getMiddleHourWork(std::string fio);
         static std::string getFileWorkers(std::string fio);
+        void setNewBus();
+        Driver* findDriverByName(std::string driverName);
+        Transport::Bus* findBusByModel(std::string modalName);
     };
 
 } // Workers

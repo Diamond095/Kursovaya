@@ -18,8 +18,12 @@ namespace Persons {
         void SetPersonInfo(std::string fio,std::string date_of_birth,std::string pol);
 
         virtual void PersonInfo();
-
+        static void ShowMenu();
         static std::string setAndGetfileWithUsers();
+        void makeChoice(int choise);
+        static void exit();
+        void showAllTrip();
+        void buyTicket(const std::string& start, const std::string& end, const std::string& startTime, int level, int row, int column);
     };
 }
 // Persons

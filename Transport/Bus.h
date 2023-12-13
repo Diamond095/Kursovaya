@@ -15,9 +15,12 @@ namespace Transport {
        int rows;
        int columns;
        int levels;
-       std::string fileName;
+       std::string fname;
+       static std::string fileOfBus;
     public:
-       Bus(std::string fname, std::string model, double fueltank) ;
+       Bus(std::string fname, std::string model, double fueltank, int rows, int columns,int levels) ;
+       static std::string SetAndGetFileWithBuses();
+       std::string getFile();
     };
 
 

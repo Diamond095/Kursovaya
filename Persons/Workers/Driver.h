@@ -12,7 +12,7 @@ namespace Workers {
     private:
         bool status=0;
     public:
-        Driver(char fio,char date_of_birth, int middletimeWork);
+        Driver(std::string fio,std::string date_of_birth, int middletimeWork);
     };
 
 } // Workers

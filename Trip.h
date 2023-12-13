@@ -20,11 +20,13 @@ namespace Trip {
         char finish;
         Transport::Bus *bus;
         bool status;
-        Workers::Driver* driver=nullptr;
+        Workers::Driver* driver;
+        static std::string fileName;
     public:
         void SetDriver(Workers::Driver *driver);
+        static std::string SetAndGetFileWithTrips();
         void SetBus(Transport::Bus *bus);
-        Trip(char start, char finish, char departure, char arrival);
+        Trip(char start, char finish, char departure, char arrival, Workers::Driver *driver, Transport::Bus *bus );
     };
 
 } // Trip
